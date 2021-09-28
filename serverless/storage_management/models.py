@@ -26,28 +26,24 @@ def compress(image):
 
 
 # Create your models here.
-class Category(models.Model):
-    name = models.CharField(max_length=128, default="Book", unique=True)
+class MachineType(models.Model):
+    name = models.CharField(max_length=128, default="Raspberry Pi", unique=True)
+    hashRate = models.FloatField(default=0, help_text="Machine's base hash rate")
+    disk_storage = models.FloatField(default=0, help_text="Storage in MB.")
+    memory_size = models.FloatField(default=0, help_text="Size in MB")
+    os_version = models.CharField(default="Ubuntu 20.04", max_length=128)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.disk_storage}MB"
 
 
-class Series(models.Model):
-    name = models.CharField(
-        max_length=128, default="No content here", unique=True)
-    description = models.TextField(blank=True, null=True, default="")
-
-    def __str__(self):
-        return self.name
-
-
-class Author(models.Model):
-    name = models.CharField(max_length=128, default="", unique=True)
-    description = models.TextField(default="No content here", null=True, blank=True)
+class Owner(models.Model):
+    user_name = models.CharField(null=True, blank=True, max_length=128)
+    user_id = models.CharField(max_length=128, default="", unique=True)
+    coinbase = models.TextField(default="No content here", null=True, blank=True, help_text="User's coinbase")
 
     def __str__(self):
-        return self.name
+        return f"{self.user_id} {self.user_name}"
 
 
 # Address
@@ -94,7 +90,7 @@ class DetailPosition(models.Model):
 
 
 class Item(models.Model):
-    unit_choices = [("USD", "美元"), ("HKD", "港币"), ("CNY", "人民币")]
+    STORAGE_STATS = [("pending", "Pending"), ("installed", "Installed"), ("delivered", "Delivered"), ("out", "Out")]
 
     uuid = models.UUIDField(
         default=uuid.uuid4, editable=False, null=True, blank=True)
@@ -102,24 +98,21 @@ class Item(models.Model):
                             help_text="Please Enter your item name")
     description = models.TextField(blank=True, null=True,
                                    help_text="Please enter your item description")
-    author = models.ForeignKey(
-        Author, on_delete=models.SET_NULL, blank=True, null=True)
+    owner = models.ForeignKey(
+        Owner, on_delete=models.SET_NULL, blank=True, null=True)
     created_time = models.DateTimeField(
         auto_now_add=True, blank=True, null=True)
-    series = models.ForeignKey(
-        Series, on_delete=models.SET_NULL, null=True, blank=True)
-    category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True, blank=True)
+    machine_type = models.ForeignKey(
+        MachineType, on_delete=models.SET_NULL, null=True, blank=True)
     price = models.FloatField(default=0.0)
     qr_code = models.CharField(max_length=10008, blank=True, null=True)
     location = models.ForeignKey(
         Location, on_delete=models.SET_NULL, null=True, blank=True)
     detail_position = models.ForeignKey(DetailPosition, on_delete=models.SET_NULL, blank=True, null=True
                                         )
+    status = models.CharField(default="pending", choices=STORAGE_STATS, help_text="Current storage status", max_length=128)
     column = models.IntegerField(default=1)
     row = models.IntegerField(default=1)
-    unit = models.CharField(max_length=10, default="USD", choices=unit_choices)
-    quantity = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name
@@ -147,12 +140,3 @@ class ItemImage(models.Model):
 
     def __str__(self):
         return f"Image-{self.item.name.title()}"
-
-
-class ItemFile(models.Model):
-    file = models.CharField(default="", max_length=1024)
-    item = models.ForeignKey(
-        Item, on_delete=models.CASCADE, related_name="files")
-
-    def __str__(self):
-        return f"File-{self.item.name.title()}"

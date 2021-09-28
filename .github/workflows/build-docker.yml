@@ -30,7 +30,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=sirily11/storage-management-system
+          DOCKER_IMAGE=sirily11/etd-storage-management-system
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/}

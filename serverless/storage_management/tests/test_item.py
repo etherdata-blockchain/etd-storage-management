@@ -4,7 +4,7 @@ from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework.test import APIRequestFactory
 from ..views import CategoryViewSet, GetByQR, ItemViewSet
-from ..models import Category, Item, DetailPosition, Author, Location, Series
+from ..models import MachineType, Item, DetailPosition, Owner, Location, Series
 from rest_framework.test import force_authenticate
 from uuid import uuid4
 
@@ -13,8 +13,8 @@ class TestGetItems(APITestCase):
     def setUp(self):
         self.user = User.objects.create(username="test", password="1234")
         self.factory = APIRequestFactory()
-        self.category = Category.objects.create(name="test")
-        self.author = Author.objects.create(name="test")
+        self.category = MachineType.objects.create(name="test")
+        self.author = Owner.objects.create(name="test")
         self.series = Series.objects.create(name="test series")
         self.location = Location.objects.create(country="a")
         self.position = DetailPosition.objects.create(position="test position")

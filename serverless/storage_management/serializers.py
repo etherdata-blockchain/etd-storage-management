@@ -8,26 +8,15 @@ class ImageRelatedField(serializers.RelatedField, ABC):
         return value.image.url
 
 
-class FileRelatedField(serializers.RelatedField, ABC):
-    def to_representation(self, value: ItemFile):
-        return value.file
-
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
+        model = MachineType
         fields = ("id", "name")
-
-
-class SeriesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Series
-        fields = ("id", "name", "description")
 
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Author
+        model = Owner
         fields = ("id", "name", "description")
 
 
@@ -69,30 +58,13 @@ class AbstractItemImageSerializer(serializers.ModelSerializer):
         fields = ("id", "image")
 
 
-class ItemFileSerializer(serializers.ModelSerializer):
-    # def __init__(self, *args, **kwargs):
-    #     many = kwargs.pop('many', True)
-    #     super(ItemFileSerializer, self).__init__(many=many, *args, **kwargs)
-
-    class Meta:
-        model = ItemFile
-        fields = ("id", "file", "item")
-
-
 class ItemSerializer(serializers.ModelSerializer):
     images = ImageRelatedField(many=True,
                                read_only=True)
-    files = FileRelatedField(many=True,
-                             read_only=True)
-    files_objects = ItemFileSerializer(source="files",
-                                       many=True,
-                                       read_only=True)
     images_objects = ItemImageSerializer(source="images",
                                          many=True,
                                          read_only=True)
     author_name = AuthorSerializer(source="author",
-                                   read_only=True)
-    series_name = SeriesSerializer(source="series",
                                    read_only=True)
     category_name = CategorySerializer(source="category",
                                        read_only=True)
@@ -101,13 +73,10 @@ class ItemSerializer(serializers.ModelSerializer):
     position_name = DetailPositionSerializer(source="detail_position",
                                              read_only=True)
     author_id = serializers.PrimaryKeyRelatedField(source="author",
-                                                   queryset=Author.objects.all(), write_only=True,
-                                                   required=True)
-    series_id = serializers.PrimaryKeyRelatedField(source="series",
-                                                   queryset=Series.objects.all(), write_only=True,
+                                                   queryset=Owner.objects.all(), write_only=True,
                                                    required=True)
     category_id = serializers.PrimaryKeyRelatedField(source="category",
-                                                     queryset=Category.objects.all(),
+                                                     queryset=MachineType.objects.all(),
                                                      write_only=True,
                                                      required=True)
     location_id = serializers.PrimaryKeyRelatedField(source="location",

@@ -4,14 +4,12 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'category', views.CategoryViewSet, basename="Category",)
-router.register(r'series', views.SeriesViewSet, basename="Series"),
 router.register(r'author', views.AuthorViewSet, basename="author"),
 router.register(r'location', views.LocationViewSet, basename="location"),
 router.register(r'detailposition', views.DetailPositionViewSet,
                 basename="detail position"),
 router.register(r'itemimage', views.ItemImageViewSet, basename="Item image")
 router.register(r'item', views.ItemViewSet, basename="Item")
-router.register(r'files', views.ItemFileViewSet, basename="files")
 
 urlpatterns = [
     path('', include(router.urls)),
