@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework.test import APIRequestFactory
-from ..views import CategoryViewSet, GetByQR
+from ..views import MachineTypeViewSet, GetByQR
 from ..models import MachineType, Item, DetailPosition
 from rest_framework.test import force_authenticate
 from uuid import uuid4
@@ -35,7 +35,7 @@ class TestGetItems(APITestCase):
     def test_get_category(self):
         factory = APIRequestFactory()
         request = factory.get("/category/")
-        view = CategoryViewSet.as_view({"get": "list"})
+        view = MachineTypeViewSet.as_view({"get": "list"})
         response = view(request)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
@@ -45,7 +45,7 @@ class TestGetItems(APITestCase):
         factory = APIRequestFactory()
         request = factory.post("/category/", {"name": "cde"})
         force_authenticate(request, user=self.user)
-        view = CategoryViewSet.as_view({"post": "create"})
+        view = MachineTypeViewSet.as_view({"post": "create"})
         response = view(request)
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.data['name'], "cde")

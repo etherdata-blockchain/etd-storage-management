@@ -90,7 +90,8 @@ class DetailPosition(models.Model):
 
 
 class Item(models.Model):
-    STORAGE_STATS = [("pending", "Pending"), ("installed", "Installed"), ("delivered", "Delivered"), ("out", "Out")]
+    STORAGE_STATS = [("pending", "Pending"), ("installed", "Installed"), ("delivered", "Delivered"), ("out", "Out"),
+                     ("error", "Error")]
 
     uuid = models.UUIDField(
         default=uuid.uuid4, editable=False, null=True, blank=True)
@@ -110,7 +111,8 @@ class Item(models.Model):
         Location, on_delete=models.SET_NULL, null=True, blank=True)
     detail_position = models.ForeignKey(DetailPosition, on_delete=models.SET_NULL, blank=True, null=True
                                         )
-    status = models.CharField(default="pending", choices=STORAGE_STATS, help_text="Current storage status", max_length=128)
+    status = models.CharField(default="pending", choices=STORAGE_STATS, help_text="Current storage status",
+                              max_length=128)
     column = models.IntegerField(default=1)
     row = models.IntegerField(default=1)
 

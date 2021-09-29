@@ -8,16 +8,16 @@ class ImageRelatedField(serializers.RelatedField, ABC):
         return value.image.url
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class MachineTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = MachineType
-        fields = ("id", "name")
+        fields = "__all__"
 
 
-class AuthorSerializer(serializers.ModelSerializer):
+class OwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Owner
-        fields = ("id", "name", "description")
+        fields = "__all__"
 
 
 class LocationSerializer(serializers.ModelSerializer):
@@ -45,11 +45,11 @@ class DetailPositionSerializer(serializers.ModelSerializer):
 
 class ItemImageSerializer(serializers.ModelSerializer):
     item_name = serializers.ReadOnlyField(source="item.name")
-    category = CategorySerializer(source="item.category", read_only=True)
+    machine_type = MachineTypeSerializer(source="item.machine_type", read_only=True)
 
     class Meta:
         model = ItemImage
-        fields = ("id", "image", "item", "item_name", "category")
+        fields = ("id", "image", "item", "item_name", "machine_type")
 
 
 class AbstractItemImageSerializer(serializers.ModelSerializer):
@@ -64,21 +64,21 @@ class ItemSerializer(serializers.ModelSerializer):
     images_objects = ItemImageSerializer(source="images",
                                          many=True,
                                          read_only=True)
-    author_name = AuthorSerializer(source="author",
-                                   read_only=True)
-    category_name = CategorySerializer(source="category",
-                                       read_only=True)
+    owner_name = OwnerSerializer(source="owner",
+                                 read_only=True)
+    machine_type_name = MachineTypeSerializer(source="machine_type",
+                                              read_only=True)
     location_name = LocationSerializer(source="location",
                                        read_only=True)
     position_name = DetailPositionSerializer(source="detail_position",
                                              read_only=True)
-    author_id = serializers.PrimaryKeyRelatedField(source="author",
-                                                   queryset=Owner.objects.all(), write_only=True,
-                                                   required=True)
-    category_id = serializers.PrimaryKeyRelatedField(source="category",
-                                                     queryset=MachineType.objects.all(),
-                                                     write_only=True,
-                                                     required=True)
+    owner_id = serializers.PrimaryKeyRelatedField(source="owner",
+                                                  queryset=Owner.objects.all(), write_only=True,
+                                                  required=True)
+    machine_type_id = serializers.PrimaryKeyRelatedField(source="machine_type",
+                                                         queryset=MachineType.objects.all(),
+                                                         write_only=True,
+                                                         required=True)
     location_id = serializers.PrimaryKeyRelatedField(source="location",
                                                      queryset=Location.objects.all(),
                                                      write_only=True,
@@ -91,25 +91,23 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = (
-            "id", "name", "description", "price", "quantity", "column", "row", "qr_code", "unit", "created_time",
-            "author_name",
-            "series_name",
-            "category_name", "location_name", "position_name",
-            "images", "files", "author_id", "series_id", "category_id", "location_id", "position_id",
-            "uuid", "files_objects", "images_objects")
+            "id", "name", "description", "price", "column", "row", "qr_code", "created_time",
+            "owner_name", "machine_type_name", "location_name", "position_name",
+            "images", "owner_id", "machine_type_id", "location_id", "position_id",
+            "uuid", "images_objects")
 
 
 class ItemAbstractSerializer(serializers.ModelSerializer):
-    author_name = serializers.ReadOnlyField(source="author.name")
-    series_name = serializers.ReadOnlyField(source="series.name")
-    category_name = serializers.ReadOnlyField(source="category.name")
+    owner_name = serializers.ReadOnlyField(source="owner.user_name")
+    machine_type_name = serializers.ReadOnlyField(source="machineType.name")
     position = serializers.ReadOnlyField(source="detail_position.position")
-    images = AbstractItemImageSerializer(many=True,
-                                         read_only=True)
+
+    # images = AbstractItemImageSerializer(many=True,
+    #                                      read_only=True)
 
     class Meta:
         model = Item
-        fields = ("id", "uuid", "name", "description", "author",
-                  "author_name", "category_name",
-                  "series_name", "column", "row", "unit",
+        fields = ("id", "uuid", "name", "description",
+                  "owner_name", "machine_type_name",
+                  "column", "row",
                   "position", "images", "price")

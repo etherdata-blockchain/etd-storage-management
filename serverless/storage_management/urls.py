@@ -3,8 +3,8 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r'category', views.CategoryViewSet, basename="Category",)
-router.register(r'author', views.AuthorViewSet, basename="author"),
+router.register(r'machine_type', views.MachineTypeViewSet, basename="machine_type", )
+router.register(r'owner', views.OwnerViewSet, basename="owner"),
 router.register(r'location', views.LocationViewSet, basename="location"),
 router.register(r'detailposition', views.DetailPositionViewSet,
                 basename="detail position"),
