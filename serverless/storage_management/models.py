@@ -19,13 +19,13 @@ def compress(image):
     # create a BytesIO object
     im_io = BytesIO()
     # save image to BytesIO object
-    im.save(im_io, 'JPEG', quality=60)
+    im.save(im_io, 'JPEG', quality=80)
     # create a django-friendly Files object
     new_image = File(im_io, name=image.name)
     return new_image
 
 
-# Create your models here.
+# Machine Type
 class MachineType(models.Model):
     name = models.CharField(max_length=128, default="Raspberry Pi", unique=True)
     hashRate = models.FloatField(default=0, help_text="Machine's base hash rate")
@@ -115,6 +115,7 @@ class Item(models.Model):
                               max_length=128)
     column = models.IntegerField(default=1)
     row = models.IntegerField(default=1)
+    ip_address = models.GenericIPAddressField(blank=True, null=True)
 
     def __str__(self):
         return self.name

@@ -41,15 +41,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="221c758a-35a6-4764-a3ad-f455c506f8c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-docker.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/storage_management/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless/storage_management/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/storage_management/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/storage_management/tests/test_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/tests/test_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/storage_management/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/tests/test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/storage_management/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/storage_management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +111,7 @@
       <recent name="$PROJECT_DIR$/serverless" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.Remote">
+  <component name="RunManager" selected="Django tests.Test">
     <configuration name="Test" type="DjangoTestsConfigurationType">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -362,7 +355,7 @@
       <workItem from="1595041118869" duration="165000" />
       <workItem from="1595041742748" duration="2401000" />
       <workItem from="1595257445153" duration="1387000" />
-      <workItem from="1632750059786" duration="9350000" />
+      <workItem from="1632750059786" duration="13583000" />
     </task>
     <servers />
   </component>
@@ -393,22 +386,22 @@
       <screen x="0" y="0" width="1536" height="960" />
     </state>
     <state x="624" y="226" key="EnvironmentVariablesDialog/0.0.1536.960@0.0.1536.960" timestamp="1632760553938" />
-    <state width="952" height="265" key="GridCell.Tab.0.bottom" timestamp="1632826771112">
+    <state width="950" height="265" key="GridCell.Tab.0.bottom" timestamp="1632891601668">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="952" height="265" key="GridCell.Tab.0.bottom/0.0.1536.960@0.0.1536.960" timestamp="1632826771112" />
-    <state width="952" height="265" key="GridCell.Tab.0.center" timestamp="1632826771110">
+    <state width="950" height="265" key="GridCell.Tab.0.bottom/0.0.1536.960@0.0.1536.960" timestamp="1632891601668" />
+    <state width="950" height="265" key="GridCell.Tab.0.center" timestamp="1632891601667">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="952" height="265" key="GridCell.Tab.0.center/0.0.1536.960@0.0.1536.960" timestamp="1632826771110" />
-    <state width="952" height="265" key="GridCell.Tab.0.left" timestamp="1632826771110">
+    <state width="950" height="265" key="GridCell.Tab.0.center/0.0.1536.960@0.0.1536.960" timestamp="1632891601667" />
+    <state width="950" height="265" key="GridCell.Tab.0.left" timestamp="1632891601666">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="952" height="265" key="GridCell.Tab.0.left/0.0.1536.960@0.0.1536.960" timestamp="1632826771110" />
-    <state width="952" height="265" key="GridCell.Tab.0.right" timestamp="1632826771111">
+    <state width="950" height="265" key="GridCell.Tab.0.left/0.0.1536.960@0.0.1536.960" timestamp="1632891601666" />
+    <state width="950" height="265" key="GridCell.Tab.0.right" timestamp="1632891601668">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="952" height="265" key="GridCell.Tab.0.right/0.0.1536.960@0.0.1536.960" timestamp="1632826771111" />
+    <state width="950" height="265" key="GridCell.Tab.0.right/0.0.1536.960@0.0.1536.960" timestamp="1632891601668" />
     <state x="277" y="116" key="SettingsEditor" timestamp="1632750297129">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
@@ -418,6 +411,6 @@
     <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_item_TestGetItems_test_list_item.coverage" NAME="Test: storage_management.tests.test_item.TestGetItems.test_list_item Coverage Results" MODIFIED="1594043260054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_item_TestGetItems_test_create_item_no_auth.coverage" NAME="Test: storage_management.tests.test_item.TestGetItems.test_create_item_no_auth Coverage Results" MODIFIED="1594043622654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_item_TestGetItems_test_get_item.coverage" NAME="Test: storage_management.tests.test_item.TestGetItems.test_get_item Coverage Results" MODIFIED="1594043489003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/storage_management_system_server$Test.coverage" NAME="Test Coverage Results" MODIFIED="1632760556987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test.coverage" NAME="Test Coverage Results" MODIFIED="1632891597544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
