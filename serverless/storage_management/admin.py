@@ -2,6 +2,18 @@ from django.contrib import admin
 from .models import *
 
 
-@admin.register(Owner, ItemImage, Item, Location, DetailPosition, MachineType)
-class GlacierAdmin(admin.ModelAdmin):
+@admin.register(ItemImage, Location, DetailPosition, MachineType)
+class Admin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    list_filter = ("owner", "machine_type")
+    search_fields = ("qr_code",)
+    autocomplete_fields = ("owner",)
+
+
+@admin.register(Owner)
+class OwnerAdmin(admin.ModelAdmin):
+    search_fields = ("user_id",)
