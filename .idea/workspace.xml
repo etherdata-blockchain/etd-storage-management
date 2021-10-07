@@ -41,8 +41,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="221c758a-35a6-4764-a3ad-f455c506f8c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/serverless/storage_management/tests/test_bind.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serverless/storage_management/util_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/serverless/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/serverless/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless/storage_management/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/storage_management/tests/test_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/tests/test_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/storage_management/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/storage_management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/storage_management/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +117,7 @@
       <recent name="$PROJECT_DIR$/serverless" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test">
+  <component name="RunManager" selected="Django Server.Remote">
     <configuration name="Test" type="DjangoTestsConfigurationType">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,7 +149,7 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: storage_management.tests.TestGetItems.test_search_by_qr" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: storage_management.tests.test_bind.TestBind" type="DjangoTestsConfigurationType" temporary="true">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,14 +162,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="storage_management.tests.TestGetItems.test_search_by_qr" />
+      <option name="TARGET" value="storage_management.tests.test_bind.TestBind" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: storage_management.tests.test_item.TestGetItems.test_create_item_no_auth" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: storage_management.tests.test_bind.TestBind.test_bind_device" type="DjangoTestsConfigurationType" temporary="true">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,14 +182,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="storage_management.tests.test_item.TestGetItems.test_create_item_no_auth" />
+      <option name="TARGET" value="storage_management.tests.test_bind.TestBind.test_bind_device" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: storage_management.tests.test_item.TestGetItems.test_get_item" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: storage_management.tests.test_bind.TestBind.test_bind_device_with_owner" type="DjangoTestsConfigurationType" temporary="true">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -196,14 +202,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="storage_management.tests.test_item.TestGetItems.test_get_item" />
+      <option name="TARGET" value="storage_management.tests.test_bind.TestBind.test_bind_device_with_owner" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: storage_management.tests.test_item.TestGetItems.test_list_item" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: storage_management.tests.test_bind.TestBind.test_bind_device_without_user" type="DjangoTestsConfigurationType" temporary="true">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -216,7 +222,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="storage_management.tests.test_item.TestGetItems.test_list_item" />
+      <option name="TARGET" value="storage_management.tests.test_bind.TestBind.test_bind_device_without_user" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: storage_management.tests.test_bind.TestGetUserDevices" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Zappa_Server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="storage_management.tests.test_bind.TestGetUserDevices" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -293,36 +319,23 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.https-portal: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="https-portal" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Django Server.Local" />
       <item itemvalue="Django Server.Remote" />
       <item itemvalue="Django tests.Test" />
-      <item itemvalue="Django tests.Test: storage_management.tests.TestGetItems.test_search_by_qr" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_item.TestGetItems.test_list_item" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_item.TestGetItems.test_get_item" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_item.TestGetItems.test_create_item_no_auth" />
-      <item itemvalue="Docker.docker-compose.yml.https-portal: Compose Deployment" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_without_user" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestGetUserDevices" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_with_owner" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: storage_management.tests.test_item.TestGetItems.test_create_item_no_auth" />
-        <item itemvalue="Django tests.Test: storage_management.tests.test_item.TestGetItems.test_get_item" />
-        <item itemvalue="Django tests.Test: storage_management.tests.test_item.TestGetItems.test_list_item" />
-        <item itemvalue="Docker.docker-compose.yml.https-portal: Compose Deployment" />
-        <item itemvalue="Django tests.Test: storage_management.tests.TestGetItems.test_search_by_qr" />
+        <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_with_owner" />
+        <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestGetUserDevices" />
+        <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind" />
+        <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device" />
+        <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_without_user" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +368,8 @@
       <workItem from="1595041118869" duration="165000" />
       <workItem from="1595041742748" duration="2401000" />
       <workItem from="1595257445153" duration="1387000" />
-      <workItem from="1632750059786" duration="13583000" />
+      <workItem from="1632750059786" duration="14608000" />
+      <workItem from="1633512078219" duration="7772000" />
     </task>
     <servers />
   </component>
@@ -372,6 +386,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="139" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632760555215">
@@ -382,35 +397,72 @@
       <screen x="0" y="0" width="1536" height="960" />
     </state>
     <state x="482" y="286" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.960@0.0.1536.960" timestamp="1632760405816" />
+    <state x="581" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1633512988260">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="581" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1536.960@0.0.1536.960" timestamp="1633512988260" />
+    <state width="802" height="466" key="DebuggerActiveHint" timestamp="1633541362048">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="802" height="466" key="DebuggerActiveHint/0.0.1536.960@0.0.1536.960" timestamp="1633541362048" />
     <state x="624" y="226" key="EnvironmentVariablesDialog" timestamp="1632760553938">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
     <state x="624" y="226" key="EnvironmentVariablesDialog/0.0.1536.960@0.0.1536.960" timestamp="1632760553938" />
-    <state width="950" height="265" key="GridCell.Tab.0.bottom" timestamp="1632891601668">
+    <state width="1072" height="328" key="GridCell.Tab.0.bottom" timestamp="1633578457275">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="950" height="265" key="GridCell.Tab.0.bottom/0.0.1536.960@0.0.1536.960" timestamp="1632891601668" />
-    <state width="950" height="265" key="GridCell.Tab.0.center" timestamp="1632891601667">
+    <state width="1072" height="328" key="GridCell.Tab.0.bottom/0.0.1536.960@0.0.1536.960" timestamp="1633578457275" />
+    <state width="1072" height="328" key="GridCell.Tab.0.center" timestamp="1633578457273">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="950" height="265" key="GridCell.Tab.0.center/0.0.1536.960@0.0.1536.960" timestamp="1632891601667" />
-    <state width="950" height="265" key="GridCell.Tab.0.left" timestamp="1632891601666">
+    <state width="1072" height="328" key="GridCell.Tab.0.center/0.0.1536.960@0.0.1536.960" timestamp="1633578457273" />
+    <state width="1072" height="328" key="GridCell.Tab.0.left" timestamp="1633578457272">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="950" height="265" key="GridCell.Tab.0.left/0.0.1536.960@0.0.1536.960" timestamp="1632891601666" />
-    <state width="950" height="265" key="GridCell.Tab.0.right" timestamp="1632891601668">
+    <state width="1072" height="328" key="GridCell.Tab.0.left/0.0.1536.960@0.0.1536.960" timestamp="1633578457272" />
+    <state width="1072" height="328" key="GridCell.Tab.0.right" timestamp="1633578457273">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
-    <state width="950" height="265" key="GridCell.Tab.0.right/0.0.1536.960@0.0.1536.960" timestamp="1632891601668" />
+    <state width="1072" height="328" key="GridCell.Tab.0.right/0.0.1536.960@0.0.1536.960" timestamp="1633578457273" />
+    <state width="1072" height="328" key="GridCell.Tab.1.bottom" timestamp="1633578457276">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1072" height="328" key="GridCell.Tab.1.bottom/0.0.1536.960@0.0.1536.960" timestamp="1633578457276" />
+    <state width="747" height="328" key="GridCell.Tab.1.bottom/0.25.1536.885@0.25.1536.885" timestamp="1633576211474" />
+    <state width="1072" height="328" key="GridCell.Tab.1.center" timestamp="1633578457275">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1072" height="328" key="GridCell.Tab.1.center/0.0.1536.960@0.0.1536.960" timestamp="1633578457275" />
+    <state width="747" height="328" key="GridCell.Tab.1.center/0.25.1536.885@0.25.1536.885" timestamp="1633576211473" />
+    <state width="1072" height="328" key="GridCell.Tab.1.left" timestamp="1633578457275">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1072" height="328" key="GridCell.Tab.1.left/0.0.1536.960@0.0.1536.960" timestamp="1633578457275" />
+    <state width="747" height="328" key="GridCell.Tab.1.left/0.25.1536.885@0.25.1536.885" timestamp="1633576211473" />
+    <state width="1072" height="328" key="GridCell.Tab.1.right" timestamp="1633578457276">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1072" height="328" key="GridCell.Tab.1.right/0.0.1536.960@0.0.1536.960" timestamp="1633578457276" />
+    <state width="747" height="328" key="GridCell.Tab.1.right/0.25.1536.885@0.25.1536.885" timestamp="1633576211474" />
     <state x="277" y="116" key="SettingsEditor" timestamp="1632750297129">
       <screen x="0" y="0" width="1536" height="960" />
     </state>
     <state x="277" y="116" key="SettingsEditor/0.0.1536.960@0.0.1536.960" timestamp="1632750297129" />
+    <state x="433" y="211" width="670" height="676" key="search.everywhere.popup" timestamp="1633521847586">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="433" y="211" width="670" height="676" key="search.everywhere.popup/0.0.1536.960@0.0.1536.960" timestamp="1633521847586" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_bind_TestBind_test_bind_device_with_owner.coverage" NAME="Test: storage_management.tests.test_bind.TestBind.test_bind_device_with_owner Coverage Results" MODIFIED="1633543642322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_bind_TestBind.coverage" NAME="Test: storage_management.tests.test_bind.TestBind Coverage Results" MODIFIED="1633522199545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_bind_TestGetUserDevices.coverage" NAME="Test: storage_management.tests.test_bind.TestGetUserDevices Coverage Results" MODIFIED="1633541366085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_item_TestGetItems_test_list_item.coverage" NAME="Test: storage_management.tests.test_item.TestGetItems.test_list_item Coverage Results" MODIFIED="1594043260054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_bind_TestBind_test_bind_device_without_user.coverage" NAME="Test: storage_management.tests.test_bind.TestBind.test_bind_device_without_user Coverage Results" MODIFIED="1633522076168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_item_TestGetItems_test_create_item_no_auth.coverage" NAME="Test: storage_management.tests.test_item.TestGetItems.test_create_item_no_auth Coverage Results" MODIFIED="1594043622654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_bind_TestBind_test_bind_device.coverage" NAME="Test: storage_management.tests.test_bind.TestBind.test_bind_device Coverage Results" MODIFIED="1633522171498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/storage_management_system_server$Test__storage_management_tests_test_item_TestGetItems_test_get_item.coverage" NAME="Test: storage_management.tests.test_item.TestGetItems.test_get_item Coverage Results" MODIFIED="1594043489003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/storage_management_system_server$Test.coverage" NAME="Test Coverage Results" MODIFIED="1632891597544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/storage_management_system_server$Test.coverage" NAME="Test Coverage Results" MODIFIED="1633541569301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

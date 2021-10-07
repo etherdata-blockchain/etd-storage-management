@@ -13,8 +13,8 @@ class TestGetItems(APITestCase):
     def setUp(self):
         self.user = User.objects.create(username="test", password="1234")
         self.factory = APIRequestFactory()
-        self.machine_type = MachineType.objects.create(name="test")
         self.owner = Owner.objects.create(user_name="test")
+        self.machine_type = MachineType.objects.create(name="test")
         self.location = Location.objects.create(country="a")
         self.position = DetailPosition.objects.create(position="test position")
 

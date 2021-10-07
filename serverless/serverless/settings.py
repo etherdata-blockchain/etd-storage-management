@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import sys
 from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -62,6 +63,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'serverless.urls'
 
+TESTING = sys.argv[1:2] == ['test']
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
@@ -95,10 +98,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'serverless.wsgi.application'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if not os.getenv("local"):
+if not os.getenv("local") and not TESTING:
     print("Using postgresSQL database")
     DATABASES = {
         'default': {
@@ -149,8 +154,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=3650),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=3650),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
 }
@@ -187,7 +192,7 @@ DEBUG = True
 
 MEDIAFILES_LOCATION = 'media'
 
-if not os.getenv('local'):
+if not os.getenv('local') and not TESTING:
     print("Using Production Environment")
     AWS_ACCESS_KEY_ID = os.getenv("ACCESS_KEY")
 

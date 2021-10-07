@@ -1,5 +1,5 @@
 import os
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from rest_framework import viewsets, generics, mixins
 from rest_framework.response import Response
 from rest_framework import status
@@ -31,6 +31,7 @@ class GetAllSettingsViewSet(generics.RetrieveAPIView):
 class GetByQR(generics.RetrieveAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemAbstractSerializer()
+    permission_classes = [IsAuthenticated]
 
     def retrieve(self, request, *args, **kwargs):
         data = Item.objects.filter(qr_code=request.query_params['qr']).first()
@@ -64,25 +65,25 @@ class GetByQR(generics.RetrieveAPIView):
 class MachineTypeViewSet(viewsets.ModelViewSet):
     queryset = MachineType.objects.all()
     serializer_class = MachineTypeSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class OwnerViewSet(viewsets.ModelViewSet):
     queryset = Owner.objects.all()
     serializer_class = OwnerSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class DetailPositionViewSet(viewsets.ModelViewSet):
     queryset = DetailPosition.objects.all()
     serializer_class = DetailPositionSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class ItemViewSet(viewsets.ModelViewSet):
@@ -91,7 +92,7 @@ class ItemViewSet(viewsets.ModelViewSet):
     pagination_class = PageNumberPagination
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['machine_type', 'location', 'detail_position']
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     search_fields = ['name']
 
     def list(self, request, *args, **kwargs):

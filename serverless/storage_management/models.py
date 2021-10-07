@@ -106,7 +106,7 @@ class Item(models.Model):
     machine_type = models.ForeignKey(
         MachineType, on_delete=models.SET_NULL, null=True, blank=True)
     price = models.FloatField(default=0.0)
-    qr_code = models.CharField(max_length=10008, blank=True, null=True)
+    qr_code = models.CharField(max_length=10008, blank=True, null=True, unique=True)
     location = models.ForeignKey(
         Location, on_delete=models.SET_NULL, null=True, blank=True)
     detail_position = models.ForeignKey(DetailPosition, on_delete=models.SET_NULL, blank=True, null=True

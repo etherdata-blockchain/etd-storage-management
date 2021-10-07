@@ -1,6 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 from . import views
+from . import util_views
 
 router = routers.DefaultRouter()
 router.register(r'machine_type', views.MachineTypeViewSet, basename="machine_type", )
@@ -14,5 +15,7 @@ router.register(r'item', views.ItemViewSet, basename="Item")
 urlpatterns = [
     path('', include(router.urls)),
     path('settings', views.GetAllSettingsViewSet.as_view()),
-    path('searchByQR', views.GetByQR.as_view())
+    path('searchByQR', views.GetByQR.as_view()),
+    path('device', util_views.GetOwnerDevicesView.as_view()),
+    path("device/register", util_views.BindDeviceView.as_view())
 ]
