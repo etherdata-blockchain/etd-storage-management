@@ -9,7 +9,7 @@ class Admin(admin.ModelAdmin):
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
-    list_filter = ("owner", "machine_type")
+    list_filter = ("owner", "machine_type", "status")
     search_fields = ("qr_code",)
     autocomplete_fields = ("owner",)
 
