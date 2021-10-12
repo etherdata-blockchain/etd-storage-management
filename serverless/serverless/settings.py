@@ -113,6 +113,7 @@ if not os.getenv("local") and not TESTING:
             'PASSWORD': os.getenv("DB_PASSWORD"),
             'HOST': os.getenv("DB_HOST"),
             'PORT': os.getenv("DB_PORT"),
+            'OPTIONS': {'sslmode': 'require'},
         }
     }
 else:
