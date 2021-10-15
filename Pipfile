@@ -19,7 +19,6 @@ coverage = "*"
 djangorestframework-simplejwt = "*"
 PyJWT = "==2.1.0"
 boto3 = "*"
-psycopg2-binary = "*"
 djongo = "*"
 pymongo = {extras = ["srv"], version = "*"}
 
