@@ -43,8 +43,11 @@
     <list default="true" id="221c758a-35a6-4764-a3ad-f455c506f8c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless/serverless/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/serverless/serverless/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,14 +331,14 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django tests.Test" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_with_owner" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_without_user" />
+      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestGetUserDevices" />
       <item itemvalue="Django Server.Local" />
       <item itemvalue="Django Server.Remote" />
-      <item itemvalue="Django tests.Test" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_without_user" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestGetUserDevices" />
-      <item itemvalue="Django tests.Test: storage_management.tests.test_bind.TestBind.test_bind_device_with_owner" />
     </list>
     <recent_temporary>
       <list>
@@ -384,7 +387,7 @@
       <workItem from="1633942736695" duration="4253000" />
       <workItem from="1634022121324" duration="199000" />
       <workItem from="1634026503593" duration="1542000" />
-      <workItem from="1634233181333" duration="6620000" />
+      <workItem from="1634233181333" duration="7891000" />
     </task>
     <servers />
   </component>

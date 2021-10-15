@@ -6,7 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-mysql-connector-python = "*"
 pytest = "*"
 requests = "*"
 pillow = "*"
@@ -21,6 +20,8 @@ djangorestframework-simplejwt = "*"
 PyJWT = "==2.1.0"
 boto3 = "*"
 psycopg2-binary = "*"
+djongo = "*"
+pymongo = {extras = ["srv"], version = "*"}
 
 [requires]
 python_version = "3.7"
