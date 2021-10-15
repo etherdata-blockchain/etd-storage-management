@@ -104,15 +104,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 if not os.getenv("local") and not TESTING:
-    print("Using postgresSQL database")
+    print("Using MONGODB database")
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv("DB_NAME"),
-            'USER': os.getenv("DB_USER"),
-            'PASSWORD': os.getenv("DB_PASSWORD"),
-            'HOST': os.getenv("DB_HOST"),
-            'PORT': os.getenv("DB_PORT"),
+            'ENGINE': 'djongo',
+            "NAME": os.getenv("DB_NAME"),
+            'CLIENT': {
+                'host': os.getenv("DB_HOST"),
+            },
             'OPTIONS': {'sslmode': 'require'},
         }
     }
