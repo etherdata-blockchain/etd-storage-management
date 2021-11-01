@@ -44,14 +44,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/jest.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/src/message.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/src/server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/src/userObj.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/storage/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/storage/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +122,7 @@
       <recent name="$PROJECT_DIR$/serverless" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunManager" selected="Django Server.Remote">
     <configuration name="Test" type="DjangoTestsConfigurationType">
       <module name="Zappa_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -367,7 +360,8 @@
       <workItem from="1633942736695" duration="4253000" />
       <workItem from="1634022121324" duration="199000" />
       <workItem from="1634026503593" duration="1542000" />
-      <workItem from="1634233181333" duration="12681000" />
+      <workItem from="1634233181333" duration="14031000" />
+      <workItem from="1635772449094" duration="1040000" />
     </task>
     <servers />
   </component>

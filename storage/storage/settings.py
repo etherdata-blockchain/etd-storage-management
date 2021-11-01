@@ -111,8 +111,12 @@ if not os.getenv("local") and not TESTING:
             "NAME": os.getenv("DB_NAME"),
             'CLIENT': {
                 'host': os.getenv("DB_HOST"),
+                'tls': True,
+                "tlsAllowInvalidCertificates": True,
             },
-            'OPTIONS': {'sslmode': 'require'},
+            'OPTIONS': {
+                'sslmode': 'require',
+            },
         }
     }
 else:
