@@ -38,6 +38,8 @@ class GetOwnerDevicesView(generics.RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         user = request.query_params.get("user")
 
+        print(Owner.objects.filter(user_id=user).exists())
+
         if not Owner.objects.filter(user_id=user).exists():
             return Response(data={"error": "User doesn't exist"}, status=404)
 

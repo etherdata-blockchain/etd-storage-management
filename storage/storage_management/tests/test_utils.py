@@ -35,6 +35,7 @@ class TestGetItems(APITestCase):
     def test_get_category(self):
         factory = APIRequestFactory()
         request = factory.get("/category/")
+        force_authenticate(request, user=self.user)
         view = MachineTypeViewSet.as_view({"get": "list"})
         response = view(request)
         self.assertEqual(response.status_code, 200)
@@ -57,6 +58,7 @@ class TestGetItems(APITestCase):
         """
         factory = APIRequestFactory()
         request = factory.get("/searchByQR/", {"qr": self.ud})
+        force_authenticate(request, user=self.user)
         view = GetByQR.as_view()
         response = view(request)
         self.assertEqual(response.status_code, 200, response)
@@ -69,6 +71,7 @@ class TestGetItems(APITestCase):
         """
         factory = APIRequestFactory()
         request = factory.get("/searchByQR/", {"qr": self.ud2})
+        force_authenticate(request, user=self.user)
         view = GetByQR.as_view()
         response = view(request)
         self.assertEqual(response.status_code, 200, response)
@@ -81,6 +84,7 @@ class TestGetItems(APITestCase):
         """
         factory = APIRequestFactory()
         request = factory.get("/searchByQR/", {"qr": self.ud3})
+        force_authenticate(request, user=self.user)
         view = GetByQR.as_view()
         response = view(request)
         self.assertEqual(response.status_code, 200, response)

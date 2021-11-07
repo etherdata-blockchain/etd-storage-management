@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "storage_management",
     'django_filters',
     "django_cleanup.apps.CleanupConfig",
-    "drf_auto_endpoint",
+    # "drf_auto_endpoint",
     "webapp",
 ]
 
@@ -69,7 +69,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-DRF_AUTO_METADATA_ADAPTER = 'drf_auto_endpoint.adapters.EmberAdapter'
+# DRF_AUTO_METADATA_ADAPTER = 'drf_auto_endpoint.adapters.EmberAdapter'
 
 CORS_ALLOW_METHODS = (
     'DELETE',
@@ -122,7 +122,7 @@ if not os.getenv("local") and not TESTING:
 else:
     DATABASES = {
         'default': {
-            'NAME': 'serverless.db',
+            'NAME': 'storeage.db',
             "ENGINE": "django.db.backends.sqlite3",
             "CHARSET": "utf8",
             "COLLATION": "utf8_general_ci"
@@ -150,7 +150,7 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20,
-    'DEFAULT_METADATA_CLASS': 'drf_auto_endpoint.metadata.MinimalAutoMetadata',
+    # 'DEFAULT_METADATA_CLASS': 'drf_auto_endpoint.metadata.MinimalAutoMetadata',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',

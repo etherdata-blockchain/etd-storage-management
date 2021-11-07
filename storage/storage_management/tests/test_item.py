@@ -30,6 +30,7 @@ class TestGetItems(APITestCase):
                             machine_type=self.machine_type,
                             owner=self.owner)
         request = self.factory.get('/item/')
+        force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"get": "list"})
         response = view(request)
         self.assertEqual(response.status_code, 200)
@@ -42,6 +43,7 @@ class TestGetItems(APITestCase):
                                    machine_type=self.machine_type,
                                    owner=self.owner)
         request = self.factory.get('/item/')
+        force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"get": "retrieve"})
         response = view(request, pk=item.id)
         self.assertEqual(response.status_code, 200)
@@ -64,6 +66,7 @@ class TestGetItems(APITestCase):
             'position_id': self.position.id,
             'location_id': self.location.id,
         })
+        force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"post": "create"})
         force_authenticate(request, user=self.user)
         response = view(request)
