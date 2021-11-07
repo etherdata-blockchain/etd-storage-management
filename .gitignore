@@ -128,3 +128,4 @@ node_modules
 *.db
 media
 database/
+.idea
