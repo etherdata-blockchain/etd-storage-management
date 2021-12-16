@@ -45,9 +45,9 @@ class TestGetItems(APITestCase):
         request = self.factory.get('/item/')
         force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"get": "retrieve"})
-        response = view(request, pk=item.id)
+        response = view(request, pk=item.pk)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data['id'], item.id)
+        self.assertEqual(response.data['uuid'], str(item.uuid))
 
     def test_create_item_no_auth(self):
         request = self.factory.post('/item/', data={

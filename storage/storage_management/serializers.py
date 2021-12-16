@@ -90,11 +90,10 @@ class ItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Item
-        fields = (
-            "id", "name", "description", "price", "column", "row", "qr_code", "created_time",
-            "owner_name", "machine_type_name", "location_name", "position_name",
-            "images", "owner_id", "machine_type_id", "location_id", "position_id",
-            "uuid", "images_objects")
+        fields = ("name", "description", "price", "column", "row", "qr_code", "created_time",
+                  "owner_name", "machine_type_name", "location_name", "position_name",
+                  "images", "owner_id", "machine_type_id", "location_id", "position_id",
+                  "uuid", "images_objects")
 
 
 class ItemAbstractSerializer(serializers.ModelSerializer):
@@ -107,7 +106,7 @@ class ItemAbstractSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Item
-        fields = ("id", "uuid", "name", "description",
+        fields = ("uuid", "name", "description",
                   "owner_name", "machine_type_name",
                   "column", "row",
                   "position", "images", "price")
