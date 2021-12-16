@@ -30,6 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Create .env
+        run: echo "" > .env
       - name: Build Test
         run: docker-compose build test
       - name: Run test
