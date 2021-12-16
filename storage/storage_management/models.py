@@ -94,7 +94,7 @@ class Item(models.Model):
                      ("error", "Error")]
 
     uuid = models.UUIDField(
-        default=uuid.uuid4, editable=False, null=True, blank=True)
+        default=uuid.uuid4, primary_key=True, editable=False)
     name = models.CharField(max_length=1024, default="", verbose_name=_("Item Name"),
                             help_text="Please Enter your item name")
     description = models.TextField(blank=True, null=True,
