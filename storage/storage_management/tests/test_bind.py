@@ -1,9 +1,8 @@
 from django.contrib.auth.models import User
 from rest_framework.test import APITestCase, APIRequestFactory, force_authenticate
-from django.utils.http import urlquote
 from ..models import Owner, Item, MachineType, Location, DetailPosition
 from ..util_views import BindDeviceView, GetOwnerDevicesView
-
+from urllib.parse import quote
 
 class TestBind(APITestCase):
 
@@ -99,7 +98,7 @@ class TestGetUserDevices(APITestCase):
     def test_get_user_devices_with_specital_character(self):
         user_name = "+1-1234567"
         factory = APIRequestFactory()
-        request = factory.get(f"?user={urlquote(user_name)}")
+        request = factory.get(f"?user={quote(user_name)}")
         force_authenticate(request, user=self.user)
         view = GetOwnerDevicesView.as_view()
         response = view(request)

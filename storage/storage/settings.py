@@ -188,7 +188,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'reactapp', "build", "static"),  # update the STATICFILES_DIRS
 )
 
-DEBUG = False
+DEBUG = True
 
 MEDIAFILES_LOCATION = 'media'
 
