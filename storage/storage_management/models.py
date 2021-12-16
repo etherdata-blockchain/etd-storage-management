@@ -41,6 +41,7 @@ class Owner(models.Model):
     user_name = models.CharField(null=True, blank=True, max_length=128)
     user_id = models.CharField(max_length=128, default="", unique=True)
     coinbase = models.TextField(default="No content here", null=True, blank=True, help_text="User's coinbase")
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
 
     def __str__(self):
         return f"{self.user_id} {self.user_name}"
