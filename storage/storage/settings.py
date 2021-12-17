@@ -68,7 +68,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-
 CORS_ALLOW_METHODS = (
     'DELETE',
     'GET',
@@ -107,6 +106,7 @@ if not os.getenv("local") and not TESTING:
         'default': {
             'ENGINE': 'djongo',
             "NAME": os.getenv("DB_NAME"),
+            'ENFORCE_SCHEMA': False,
             'CLIENT': {
                 'host': os.getenv("DB_HOST"),
                 'tls': True,
