@@ -52,7 +52,7 @@ class TestGetItems(APITestCase):
     def test_create_item_no_auth(self):
         request = self.factory.post('/item/', data={
             'name': "test",
-            'owner_id': self.owner.id
+            'owner_id': self.owner.pk
         })
         view = ItemViewSet.as_view({"post": "create"})
         response = view(request)
@@ -61,10 +61,10 @@ class TestGetItems(APITestCase):
     def test_create_item_with_auth(self):
         request = self.factory.post('/item/', data={
             'name': "test",
-            'owner_id': self.owner.id,
-            'machine_type_id': self.machine_type.id,
-            'position_id': self.position.id,
-            'location_id': self.location.id,
+            'owner_id': self.owner.pk,
+            'machine_type_id': self.machine_type.pk,
+            'position_id': self.position.pk,
+            'location_id': self.location.pk,
         })
         force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"post": "create"})
