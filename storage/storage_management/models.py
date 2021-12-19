@@ -1,4 +1,4 @@
-from django.db import models
+from djongo import models
 from django.utils.translation import gettext as _
 import uuid
 from os import path
@@ -93,8 +93,6 @@ class Item(models.Model):
     STORAGE_STATS = [("pending", "Pending"), ("installed", "Installed"), ("delivered", "Delivered"), ("out", "Out"),
                      ("error", "Error")]
 
-    uuid = models.UUIDField(
-        default=uuid.uuid4, primary_key=True, editable=False)
     name = models.CharField(max_length=1024, default="", verbose_name=_("Item Name"),
                             help_text="Please Enter your item name")
     description = models.TextField(blank=True, null=True,
@@ -106,7 +104,7 @@ class Item(models.Model):
     machine_type = models.ForeignKey(
         MachineType, on_delete=models.SET_NULL, null=True, blank=True)
     price = models.FloatField(default=0.0)
-    qr_code = models.CharField(max_length=10008, blank=True, null=True, unique=True)
+    qr_code = models.CharField(max_length=10008, primary_key=True)
     location = models.ForeignKey(
         Location, on_delete=models.SET_NULL, null=True, blank=True)
     detail_position = models.ForeignKey(DetailPosition, on_delete=models.SET_NULL, blank=True, null=True
