@@ -17,3 +17,8 @@ class ItemAdmin(admin.ModelAdmin):
 @admin.register(Owner)
 class OwnerAdmin(admin.ModelAdmin):
     search_fields = ("user_id",)
+
+
+@admin.register(ItemGroup)
+class ItemGroupAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("items",)

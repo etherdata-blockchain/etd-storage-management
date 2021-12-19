@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "storage_management",
     'django_filters',
     "django_cleanup.apps.CleanupConfig",
-    "webapp",
 ]
 
 MIDDLEWARE = [
@@ -96,9 +95,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'storage.wsgi.application'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 if not os.getenv("local") and not TESTING:
     print("Using MONGODB database")
@@ -212,5 +208,3 @@ if not os.getenv('local') and not TESTING:
 
     AWS_S3_ENDPOINT_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_REGION_NAME}.{AWS_DEFAULT_ENDING}"
     print("Using AWS endpoint: " + AWS_S3_ENDPOINT_URL)
-
-    # AWS_S3_CUSTOM_DOMAIN = f"storage-image.{AWS_S3_REGION_NAME}.cdn.digitaloceanspaces.com/storage-management-data"

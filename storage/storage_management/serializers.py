@@ -109,4 +109,10 @@ class ItemAbstractSerializer(serializers.ModelSerializer):
         fields = ("uuid", "name", "description",
                   "owner_name", "machine_type_name",
                   "column", "row",
-                  "position", "images", "price")
+                  "position", "images", "price", "qr_code")
+
+
+class ItemGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemGroup
+        fields = ("items", "group_name", "creation_time")

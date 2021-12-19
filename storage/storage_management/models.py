@@ -143,3 +143,15 @@ class ItemImage(models.Model):
 
     def __str__(self):
         return f"Image-{self.item.name.title()}"
+
+
+class ItemGroup(models.Model):
+    items = models.ArrayReferenceField(
+        to=Item,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+
+    )
+    group_name = models.CharField(help_text="Enter the group name", max_length=64, primary_key=True)
+    creation_time = models.DateTimeField(auto_now_add=True)

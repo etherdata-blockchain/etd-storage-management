@@ -9,7 +9,7 @@ verify_ssl = true
 pytest = "*"
 requests = "*"
 pillow = "*"
-django = "*"
+django = "==4.0"
 djangorestframework = "*"
 django-cors-headers = "*"
 django-storages = "*"
@@ -20,7 +20,8 @@ djangorestframework-simplejwt = "*"
 PyJWT = "==2.1.0"
 boto3 = "*"
 djongo = "*"
-pymongo = {extras = ["srv"], version = "*"}
+pymongo = "==3.12.3"
+django-autocomplete-light = "*"
 
 [requires]
 python_version = "3.10"

@@ -9,23 +9,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
 
-class GetAllSettingsViewSet(generics.RetrieveAPIView):
-    queryset = Item.objects.all()
-    serializer_class = ItemSerializer()
-
-    def retrieve(self, request, *args, **kwargs):
-        categories = MachineType.objects.all()
-        author = Owner.objects.all()
-        location = Location.objects.all()
-        position = DetailPosition.objects.all()
-        return Response({
-            "categories": MachineTypeSerializer(categories, many=True).data,
-            "owners": OwnerSerializer(author, many=True).data,
-            "locations": LocationSerializer(location, many=True).data,
-            "positions": DetailPositionSerializer(position, many=True).data
-        })
-
-
 class GetByQR(generics.RetrieveAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemAbstractSerializer()
@@ -85,13 +68,13 @@ class DetailPositionViewSet(viewsets.ModelViewSet):
 
 
 class ItemViewSet(viewsets.ModelViewSet):
-    queryset = Item.objects.all().order_by('name')
+    queryset = Item.objects.all().order_by('qr_code')
     serializer_class = ItemSerializer
     pagination_class = PageNumberPagination
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['machine_type', 'location', 'detail_position']
     permission_classes = [IsAuthenticated]
-    search_fields = ['name']
+    search_fields = ['qr_code']
 
     def list(self, request, *args, **kwargs):
         self.serializer_class = ItemAbstractSerializer
@@ -101,12 +84,13 @@ class ItemViewSet(viewsets.ModelViewSet):
 class ItemImageViewSet(viewsets.ModelViewSet):
     queryset = ItemImage.objects.all()
     serializer_class = ItemImageSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class GetItemByLocationView(generics.RetrieveAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer()
+    permission_classes = [IsAuthenticated]
 
     def retrieve(self, request, *args, **kwargs):
         pid = request.query_params['position_id']
@@ -117,3 +101,11 @@ class GetItemByLocationView(generics.RetrieveAPIView):
             return Response(data=data.data, status=200)
 
         return Response(data=[], status=400)
+
+
+class ItemGroupViewSet(viewsets.ModelViewSet):
+    queryset = ItemGroup.objects.all()
+    serializer_class = ItemGroupSerializer
+    permission_classes = [IsAuthenticated]
+    pagination_class = PageNumberPagination
+
