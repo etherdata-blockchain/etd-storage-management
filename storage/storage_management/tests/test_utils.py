@@ -24,8 +24,8 @@ class TestGetItems(APITestCase):
         position.save()
         item = Item(name="abc", uuid=self.ud)
         item2 = Item(name="cde", qr_code=self.ud2)
-        item3 = Item(name="efg", detail_position=position)
-        item4 = Item(name="hij", detail_position=position)
+        item3 = Item(name="efg", detail_position=position, qr_code=uuid4())
+        item4 = Item(name="hij", detail_position=position, qr_code=uuid4())
 
         item.save()
         item2.save()

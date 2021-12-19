@@ -93,6 +93,8 @@ class Item(models.Model):
     STORAGE_STATS = [("pending", "Pending"), ("installed", "Installed"), ("delivered", "Delivered"), ("out", "Out"),
                      ("error", "Error")]
 
+    uuid = models.UUIDField(
+        default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=1024, default="", verbose_name=_("Item Name"),
                             help_text="Please Enter your item name")
     description = models.TextField(blank=True, null=True,

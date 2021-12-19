@@ -23,12 +23,14 @@ class TestGetItems(APITestCase):
                             detail_position=self.position,
                             location=self.location,
                             machine_type=self.machine_type,
-                            owner=self.owner)
+                            owner=self.owner,
+                            qr_code="1")
         Item.objects.create(name="test item 2",
                             detail_position=self.position,
                             location=self.location,
                             machine_type=self.machine_type,
-                            owner=self.owner)
+                            owner=self.owner,
+                            qr_code="2")
         request = self.factory.get('/item/')
         force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"get": "list"})
@@ -47,7 +49,7 @@ class TestGetItems(APITestCase):
         view = ItemViewSet.as_view({"get": "retrieve"})
         response = view(request, pk=item.pk)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data['uuid'], str(item.uuid))
+        self.assertEqual(response.data['qr_code'], str(item.qr_code))
 
     def test_create_item_no_auth(self):
         request = self.factory.post('/item/', data={
@@ -65,6 +67,7 @@ class TestGetItems(APITestCase):
             'machine_type_id': self.machine_type.pk,
             'position_id': self.position.pk,
             'location_id': self.location.pk,
+            "qr_code": "1"
         })
         force_authenticate(request, user=self.user)
         view = ItemViewSet.as_view({"post": "create"})
