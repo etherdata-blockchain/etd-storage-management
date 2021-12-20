@@ -1,3 +1,4 @@
+import bson
 from djongo import models
 from django.utils.translation import gettext as _
 import uuid
@@ -39,7 +40,7 @@ class MachineType(models.Model):
 
 class Owner(models.Model):
     user_name = models.CharField(null=True, blank=True, max_length=128)
-    user_id = models.CharField(max_length=128, default="", unique=True)
+    user_id = models.CharField(max_length=128, default="", primary_key=True)
     coinbase = models.TextField(default="No content here", null=True, blank=True, help_text="User's coinbase")
 
     def __str__(self):
@@ -61,13 +62,14 @@ class Location(models.Model):
     latitude = models.FloatField(null=True, blank=True)
 
     longitude = models.FloatField(null=True, blank=True)
+    uuid = models.UUIDField(auto_created=True, editable=False, primary_key=True, default=uuid.uuid4)
 
     def __str__(self):
         return f"{self.country}{self.city}{self.building}"
 
 
 class DetailPosition(models.Model):
-    position = models.CharField(max_length=1024, default="Book Shelf 1")
+    position = models.CharField(max_length=1024, default="Book Shelf 1", primary_key=True)
     description = models.TextField(null=True, blank=True)
     uuid = models.UUIDField(
         default=uuid.uuid4, editable=False, null=True, blank=True)
@@ -94,7 +96,7 @@ class Item(models.Model):
                      ("error", "Error")]
 
     uuid = models.UUIDField(
-        default=uuid.uuid4, editable=False)
+        default=uuid.uuid4, editable=False, auto_created=True)
     name = models.CharField(max_length=1024, default="", verbose_name=_("Item Name"),
                             help_text="Please Enter your item name")
     description = models.TextField(blank=True, null=True,
@@ -151,7 +153,7 @@ class ItemGroup(models.Model):
         on_delete=models.CASCADE,
         blank=True,
         null=True,
-
     )
     group_name = models.CharField(help_text="Enter the group name", max_length=64, primary_key=True)
+    description = models.TextField(default="", null=True, blank=True)
     creation_time = models.DateTimeField(auto_now_add=True)

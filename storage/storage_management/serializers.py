@@ -28,7 +28,7 @@ class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Location
-        fields = ("id", "country", "city", "street",
+        fields = ("uuid", "country", "city", "street",
                   "building", "unit", "room_number", "name", "latitude", "longitude")
 
 
@@ -40,7 +40,7 @@ class DetailPositionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DetailPosition
-        fields = ("id", "position", "description", "name", "uuid", "image")
+        fields = ("position", "description", "name", "uuid", "image")
 
 
 class ItemImageSerializer(serializers.ModelSerializer):

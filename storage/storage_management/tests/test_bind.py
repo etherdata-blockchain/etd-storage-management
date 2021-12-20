@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import User
 from rest_framework.test import APITestCase, APIRequestFactory, force_authenticate
 from ..models import Owner, Item, MachineType, Location, DetailPosition
@@ -9,7 +11,7 @@ class TestBind(APITestCase):
     def setUp(self) -> None:
         self.user = User.objects.create(username="test", password="1234")
         self.machine_type = MachineType.objects.create(name="test")
-        self.location = Location.objects.create(country="a")
+        self.location = Location.objects.create(country="a", uuid=uuid.uuid4())
         self.position = DetailPosition.objects.create(position="test position")
         Item.objects.create(name="Test Object", machine_type=self.machine_type, location=self.location,
                             detail_position=self.position, qr_code="test_device")
@@ -77,7 +79,7 @@ class TestGetUserDevices(APITestCase):
     def setUp(self) -> None:
         self.user = User.objects.create(username="test", password="1234")
         self.machine_type = MachineType.objects.create(name="test")
-        self.location = Location.objects.create(country="a")
+        self.location = Location.objects.create(country="a", uuid=uuid.uuid4())
         self.owner = Owner.objects.create(user_id="test")
         self.owner2 = Owner.objects.create(user_id="+1-1234567")
         self.position = DetailPosition.objects.create(position="test position")

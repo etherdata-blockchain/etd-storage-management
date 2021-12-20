@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
@@ -13,9 +15,9 @@ class TestGetItems(APITestCase):
     def setUp(self):
         self.user = User.objects.create(username="test", password="1234")
         self.factory = APIRequestFactory()
-        self.owner = Owner.objects.create(user_name="test")
+        self.owner = Owner.objects.create(user_name="test", user_id="1")
         self.machine_type = MachineType.objects.create(name="test")
-        self.location = Location.objects.create(country="a")
+        self.location = Location.objects.create(country="a", uuid=uuid.uuid4())
         self.position = DetailPosition.objects.create(position="test position")
 
     def test_list_item(self):

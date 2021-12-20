@@ -102,7 +102,7 @@ if not os.getenv("local") and not TESTING:
         'default': {
             'ENGINE': 'djongo',
             "NAME": os.getenv("DB_NAME"),
-            'ENFORCE_SCHEMA': False,
+            'ENFORCE_SCHEMA': True,
             'CLIENT': {
                 'host': os.getenv("DB_HOST"),
                 'tls': True,

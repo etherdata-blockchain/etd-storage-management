@@ -72,7 +72,7 @@ class ItemViewSet(viewsets.ModelViewSet):
     serializer_class = ItemSerializer
     pagination_class = PageNumberPagination
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_fields = ['machine_type', 'location', 'detail_position']
+    filterset_fields = ['machine_type', 'location', 'detail_position', "owner"]
     permission_classes = [IsAuthenticated]
     search_fields = ['qr_code']
 
@@ -108,4 +108,3 @@ class ItemGroupViewSet(viewsets.ModelViewSet):
     serializer_class = ItemGroupSerializer
     permission_classes = [IsAuthenticated]
     pagination_class = PageNumberPagination
-

@@ -44,5 +44,7 @@ class GetOwnerDevicesView(generics.RetrieveAPIView):
             return Response(data={"error": "User doesn't exist"}, status=404)
 
         devices = Item.objects.filter(owner__user_id=user)
-        data = ItemAbstractSerializer(devices, many=True)
-        return Response(data=data.data, status=200)
+        pagination_results = self.paginate_queryset(devices)
+        # data = ItemAbstractSerializer(devices, many=True)
+
+        return Response(data=pagination_results, status=200)

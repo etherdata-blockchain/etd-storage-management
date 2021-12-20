@@ -1,20 +1,5 @@
 version: "3"
 services:
-  https:
-    image: steveltn/https-portal:1
-    ports:
-      - '80:80'
-      - '443:443'
-    links:
-      - django
-    restart: always
-    depends_on:
-      - django
-    environment:
-      CLIENT_MAX_BODY_SIZE: 0
-      DOMAINS: 'storage.sirileepage.com -> http://django'
-      STAGE: 'production' # Don't use production until staging works
-      # FORCE_RENEW: 'true'
   django:
     build: ./
     image: sirily11/etd-storage-management-system
@@ -27,6 +12,13 @@ services:
     environment:
       GUNICORN_CMD_ARGS: "--bind=0.0.0.0:8080 --workers=3"
 
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+
   test:
     build: ./
     image: sirily11/storage-management-system
@@ -35,4 +27,4 @@ services:
     command: >
       sh -c "coverage run --source='.' manage.py test && coverage html"
     environment:
-      - local=1
+      - DB_HOST=mongodb://user:password@mongodb:27017
