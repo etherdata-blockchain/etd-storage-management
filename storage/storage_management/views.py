@@ -2,6 +2,9 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticate
 from rest_framework import viewsets, generics, mixins
 from rest_framework.response import Response
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
+
+from .filters.item_filter import ItemFilter
+from .paginator import TotalPagePagination
 from .serializers import *
 from .models import *
 from django.db.models import Q
@@ -50,9 +53,10 @@ class MachineTypeViewSet(viewsets.ModelViewSet):
 
 
 class OwnerViewSet(viewsets.ModelViewSet):
-    queryset = Owner.objects.all()
+    queryset = Owner.objects.all().order_by("user_id")
     serializer_class = OwnerSerializer
     permission_classes = [IsAuthenticated]
+    pagination_class = TotalPagePagination
 
 
 class LocationViewSet(viewsets.ModelViewSet):
@@ -70,15 +74,11 @@ class DetailPositionViewSet(viewsets.ModelViewSet):
 class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all().order_by('qr_code')
     serializer_class = ItemSerializer
-    pagination_class = PageNumberPagination
+    pagination_class = TotalPagePagination
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_fields = ['machine_type', 'location', 'detail_position', "owner"]
+    filterset_class = ItemFilter
     permission_classes = [IsAuthenticated]
     search_fields = ['qr_code']
-
-    def list(self, request, *args, **kwargs):
-        self.serializer_class = ItemAbstractSerializer
-        return super().list(request, *args, **kwargs)
 
 
 class ItemImageViewSet(viewsets.ModelViewSet):
